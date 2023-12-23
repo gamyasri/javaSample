@@ -1,0 +1,38 @@
+Windows : 
+
+Go to "System Properties" (Can be found on Control Panel > System and Security > System > Advanced System Settings)
+Click on the "Environment variables" button under the "Advanced" tab
+Then, select the "Path" variable in System variables and click on the "Edit" button
+Click on the "New" button and add the path where Java is installed, followed by \bin. By default, Java is installed in C:\Program Files\Java\jdk-11.0.1 (If nothing else was specified when you installed it). In that case, You will have to add a new path with: C:\Program Files\Java\jdk-11.0.1\bin
+Then, click "OK", and save the settings
+open Command Prompt (cmd.exe) and type java -version to see if Java is running on your machine
+
+
+MACOS:
+1. Update the Homebrew formulae by typing:
+
+brew update
+
+2. Use the following command to install OpenJDK:
+
+brew install openjdk@[version]
+
+For [version], specify the version you wish to install. For example, to install OpenJDK 18, type:
+
+brew install openjdk@18
+
+1. To permanently export the JAVA_HOME variable, add it to the .zshenv file by typing:
+
+echo "export JAVA_HOME=/opt/homebrew/opt/openjdk" >> ~/.zshenv
+
+2. To permanently add the Java installation to the PATH variable, run:
+
+echo "export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"" >> ~/.zshenv
+
+3. Use the source command to apply the changes to the current session.
+
+source ~/.zshenv
+
+4. Confirm the success of the operation by checking the Java version:
+
+java -version
